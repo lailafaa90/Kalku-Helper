@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalkulus 2 UAS Helper</title>
+  <meta name="description" content="Website belajar Kalkulus 2 untuk UAS: logaritma natural, integral parsial, luas daerah, cakram, cincin, dan kulit tabung." />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[','\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="blob blob-one"></div>
+  <div class="blob blob-two"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Beranda Kalkulus 2 UAS Helper">
+      <span class="brand-mark">∫</span>
+      <span>
+        <strong>Kalkulus 2</strong>
+        <small>UAS Helper</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#mulai">Mulai</a>
+      <a href="#bab0">Cari x</a>
+      <a href="#materi">Materi</a>
+      <a href="#visualisasi">Visualisasi</a>
+      <a href="#latihan">Latihan</a>
+      <a href="#tips">Tips</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="mulai">
+      <div class="hero-content">
+        <p class="eyebrow">Website belajar UAS yang ramah, pelan-pelan, dan tidak bikin panik</p>
+        <h1>Kalkulus itu bukan monster. Kita pecah jadi langkah kecil.</h1>
+        <p class="hero-text">
+          Materi ini disusun dari diskusi kita: cara menentukan angka \(x\), logaritma natural, integral parsial, luas daerah, metode cakram, cincin, dan kulit tabung. Semua dibuat dengan bahasa sederhana, contoh soal dari kisi-kisi, dan visualisasi grafik.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#bab0">Pelajari cara cari x</a>
+          <a class="button secondary" href="#visualisasi">Lihat gambar hasil hitung</a>
+        </div>
+        <div class="hero-stats" aria-label="Ringkasan isi website">
+          <div><strong>10+</strong><span>Bab inti</span></div>
+          <div><strong>20+</strong><span>Contoh soal</span></div>
+          <div><strong>1</strong><span>Visualizer</span></div>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Kartu rumus utama">
+        <div class="mini-window">
+          <span></span><span></span><span></span>
+        </div>
+        <h2>Rumus yang sering keluar</h2>
+        <div class="formula-card calm">\[L=\int_a^b(atas-bawah)\,dx\]</div>
+        <div class="formula-card warm">\[V=\pi\int_a^b R^2\,dx\]</div>
+        <div class="formula-card mint">\[V=2\pi\int_a^b r h\,dx\]</div>
+        <p class="note">Kunci awalnya selalu sama: cari batas, tentukan daerah, baru hitung.</p>
+      </div>
+    </section>
+
+    <section class="section quick-map">
+      <div class="section-title">
+        <p class="eyebrow">Peta belajar</p>
+        <h2>Urutan belajar yang paling aman</h2>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span>01</span>
+          <h3>Cari batas \(x\) atau \(y\)</h3>
+          <p>Gunakan sumbu-X, sumbu-Y, titik potong, atau batas yang sudah diberikan soal.</p>
+        </article>
+        <article class="step-card">
+          <span>02</span>
+          <h3>Buat sketsa</h3>
+          <p>Ambil batas kiri, batas kanan, dan titik bantu di antaranya. Grafik tidak harus sempurna, yang penting daerahnya benar.</p>
+        </article>
+        <article class="step-card">
+          <span>03</span>
+          <h3>Pilih rumus</h3>
+          <p>Luas, cakram, cincin, atau kulit tabung. Pilih dari bentuk daerah dan sumbu putarnya.</p>
+        </article>
+        <article class="step-card">
+          <span>04</span>
+          <h3>Hitung pelan-pelan</h3>
+          <p>Kuadratkan jari-jari untuk cakram/cincin. Untuk kulit tabung, pakai \(2\pi rh\).</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="bab0">
+      <div class="section-title wide">
+        <p class="eyebrow">Bab 0 — paling penting</p>
+        <h2>Cara menentukan angka \(x\): kenapa bisa 0, -1, 2, 3, atau 4?</h2>
+        <p>Angka \(x\) itu tidak asal pilih. Biasanya muncul dari batas soal, titik potong, sumbu, domain akar, atau angka bantu untuk menggambar.</p>
+      </div>
+
+      <div class="rule-grid">
+        <article class="rule-card">
+          <div class="rule-icon">📌</div>
+          <h3>Kalau soal memberi \(x=0\), \(x=1\), langsung pakai</h3>
+          <p>Contoh: \(y=-x+1, x=0, x=1\). Berarti batasnya \(0\le x\le1\).</p>
+        </article>
+        <article class="rule-card">
+          <div class="rule-icon">➖</div>
+          <h3>Kalau ada sumbu-X, buat \(y=0\)</h3>
+          <p>Contoh: \(y=1-x^2\). Karena sumbu-X berarti \(y=0\), maka \(1-x^2=0\), sehingga \(x=-1\) dan \(x=1\).</p>
+        </article>
+        <article class="rule-card">
+          <div class="rule-icon">│</div>
+          <h3>Kalau ada sumbu-Y, buat \(x=0\)</h3>
+          <p>Contoh: \(y=4-x^2\). Saat \(x=0\), \(y=4\). Titiknya \((0,4)\).</p>
+        </article>
+        <article class="rule-card">
+          <div class="rule-icon">🔁</div>
+          <h3>Kalau ada dua kurva, samakan</h3>
+          <p>Contoh: \(x+2=x^2\), sehingga \(x^2-x-2=0\), hasilnya \(x=-1\) dan \(x=2\).</p>
+        </article>
+        <article class="rule-card">
+          <div class="rule-icon">√</div>
+          <h3>Kalau ada akar, isi akar harus \(\ge0\)</h3>
+          <p>Contoh: \(y=\sqrt{9-x^2}\). Maka \(9-x^2\ge0\), sehingga \(-3\le x\le3\).</p>
+        </article>
+        <article class="rule-card">
+          <div class="rule-icon">✏️</div>
+          <h3>Untuk sketsa, ambil angka bantu</h3>
+          <p>Kalau batasnya \(-1\) sampai \(2\), ambil \(x=-1,0,1,2\). Kalau \(0\) sampai \(3\), ambil \(0,1,2,3\).</p>
+        </article>
+      </div>
+
+      <div class="soft-panel two-col">
+        <div>
+          <h3>Contoh cepat: kenapa bisa dari \(-1\) ke \(2\)?</h3>
+          <p>Soal: luas daerah antara \(y=x+2\) dan \(y=x^2\).</p>
+          <ol class="clean-list">
+            <li>Samakan: \(x+2=x^2\).</li>
+            <li>Pindahkan: \(x^2-x-2=0\).</li>
+            <li>Faktorkan: \((x-2)(x+1)=0\).</li>
+            <li>Jadi \(x=2\) atau \(x=-1\).</li>
+          </ol>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>\(x\)</th><th>\(y=x+2\)</th><th>\(y=x^2\)</th></tr></thead>
+            <tbody>
+              <tr><td>-1</td><td>1</td><td>1</td></tr>
+              <tr><td>0</td><td>2</td><td>0</td></tr>
+              <tr><td>1</td><td>3</td><td>1</td></tr>
+              <tr><td>2</td><td>4</td><td>4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mini-math">
+      <div class="section-title wide">
+        <p class="eyebrow">Bekal aljabar kecil</p>
+        <h2>Hitungan akar dan pangkat pecahan yang sering muncul</h2>
+      </div>
+      <div class="mini-grid">
+        <article class="mini-card">
+          <h3>Cara menghitung \(x\sqrt{x}\)</h3>
+          <p>Ubah akar menjadi pangkat pecahan:</p>
+          <div class="formula-card">\[x\sqrt{x}=x^1\cdot x^{1/2}=x^{3/2}\]</div>
+          <p>Contoh: \(4\sqrt4=4\cdot2=8\).</p>
+        </article>
+        <article class="mini-card">
+          <h3>Integral \(x^{a/b}\)</h3>
+          <p>Pakai rumus pangkat:</p>
+          <div class="formula-card">\[\int x^{a/b}dx=\frac{x^{a/b+1}}{a/b+1}+C\]</div>
+          <p>Contoh: \(\int \sqrt{x}\,dx=\frac23x^{3/2}+C\).</p>
+        </article>
+        <article class="mini-card">
+          <h3>Kuadrat akar</h3>
+          <p>Kalau akar dikuadratkan, akar hilang:</p>
+          <div class="formula-card">\[(\sqrt{a})^2=a\]</div>
+          <p>Contoh: \((\sqrt{x})^2=x\), \((\sqrt{9-x^2})^2=9-x^2\).</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="materi">
+      <div class="section-title wide">
+        <p class="eyebrow">Materi utama</p>
+        <h2>Bab lengkap versi sederhana</h2>
+        <p>Klik setiap bab untuk membuka penjelasan, rumus, contoh, dan cara menggambar.</p>
+      </div>
+
+      <div class="accordion" id="materiAccordion">
+        <article class="accordion-item open">
+          <button class="accordion-trigger" aria-expanded="true">
+            <span>Bab 1 — Logaritma Natural</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Logaritma natural ditulis \(\ln x\). Artinya logaritma dengan basis \(e\), yaitu \(e\approx2{,}718\).</p>
+            <div class="formula-grid">
+              <div>\[\ln e=1\]</div>
+              <div>\[\ln1=0\]</div>
+              <div>\[\ln(e^x)=x\]</div>
+              <div>\[\int \frac1x dx=\ln|x|+C\]</div>
+            </div>
+            <h4>Contoh</h4>
+            <p>Hitung \(\int \frac{2x}{x^2+4}dx\).</p>
+            <p>Misal \(u=x^2+4\), maka \(du=2x\,dx\). Jadi:</p>
+            <div class="formula-card">\[\int \frac{2x}{x^2+4}dx=\int\frac1u du=\ln|u|+C=\ln(x^2+4)+C\]</div>
+            <p><strong>Cara gambar:</strong> untuk \(y=\ln x\), ambil titik \((1,0)\), \((e,1)\), dan \((1/e,-1)\). Grafik hanya ada untuk \(x>0\).</p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Bab 2 — Integral Parsial Tak Tentu</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Integral parsial dipakai untuk integral yang berbentuk perkalian dua fungsi, seperti \(xe^x\), \(x\ln x\), atau \(x\sin x\).</p>
+            <div class="formula-card">\[\int u\,dv=uv-\int v\,du\]</div>
+            <p>Pilih \(u\) memakai urutan LIATE: Logarithmic, Inverse trig, Algebra, Trigonometri, Eksponen.</p>
+            <h4>Contoh</h4>
+            <p>Hitung \(\int xe^x dx\).</p>
+            <p>Pilih \(u=x\), \(dv=e^x dx\), maka \(du=dx\), \(v=e^x\).</p>
+            <div class="formula-card">\[\int xe^x dx=xe^x-\int e^x dx=xe^x-e^x+C=e^x(x-1)+C\]</div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Bab 3 — Integral Parsial Tentu</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Integral parsial tentu sama seperti integral parsial biasa, tetapi ada batas bawah dan batas atas.</p>
+            <div class="formula-card">\[\int_a^b u\,dv=[uv]_a^b-\int_a^b v\,du\]</div>
+            <h4>Contoh</h4>
+            <p>Hitung \(\int_0^1xe^x dx\).</p>
+            <div class="formula-card">\[\int_0^1xe^x dx=[xe^x]_0^1-\int_0^1e^x dx=e-(e-1)=1\]</div>
+            <p><strong>Cara gambar:</strong> gambar kurva \(y=xe^x\), tandai \(x=0\) dan \(x=1\), lalu arsir daerah di bawah kurva.</p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Bab 4 — Luas Daerah</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Untuk luas dengan integral terhadap \(x\), pakai:</p>
+            <div class="formula-card">\[L=\int_a^b(atas-bawah)\,dx\]</div>
+            <p>Untuk luas terhadap \(y\), pakai:</p>
+            <div class="formula-card">\[L=\int_c^d(kanan-kiri)\,dy\]</div>
+            <h4>Contoh dari kisi-kisi</h4>
+            <p>Daerah dibatasi \(y=x+2\) dan \(y=x^2\).</p>
+            <ol class="clean-list">
+              <li>Titik potong: \(x+2=x^2\Rightarrow x=-1,2\).</li>
+              <li>Ambil \(x=0\): garis \(=2\), parabola \(=0\), jadi atas \(x+2\), bawah \(x^2\).</li>
+              <li>\(L=\int_{-1}^{2}[(x+2)-x^2]dx=\frac92\).</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Bab 5 — Metode Cakram</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Metode cakram dipakai ketika daerah diputar dan hasilnya tidak berlubang.</p>
+            <div class="formula-card">\[V=\pi\int_a^b R^2\,dx\]</div>
+            <p>Jika diputar terhadap sumbu-X, biasanya \(R\) adalah jarak dari sumbu-X ke kurva, yaitu nilai \(y\).</p>
+            <h4>Contoh dari kisi-kisi</h4>
+            <p>\(y=\sqrt{x}, x=1, x=2\), diputar terhadap sumbu-X.</p>
+            <div class="formula-card">\[V=\pi\int_1^2(\sqrt{x})^2dx=\pi\int_1^2x\,dx=\frac{3\pi}{2}\]</div>
+            <p><strong>Cara gambar:</strong> gambar kurva, arsir daerah di bawah kurva sesuai batas, lalu beri panah putaran ke sumbu-X.</p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Bab 6 — Metode Cincin</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Metode cincin dipakai ketika hasil putaran punya lubang. Ada jari-jari luar \(R\) dan jari-jari dalam \(r\).</p>
+            <div class="formula-card">\[V=\pi\int_a^b(R^2-r^2)\,dx\]</div>
+            <h4>Contoh dari kisi-kisi</h4>
+            <p>\(y=x^2\) dan \(y=2x\), diputar terhadap sumbu-X.</p>
+            <ol class="clean-list">
+              <li>Titik potong: \(x^2=2x\Rightarrow x=0,2\).</li>
+              <li>Atas \(2x\), bawah \(x^2\).</li>
+              <li>\(R=2x\), \(r=x^2\).</li>
+            </ol>
+            <div class="formula-card">\[V=\pi\int_0^2[(2x)^2-(x^2)^2]dx=\frac{64\pi}{15}\]</div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Bab 7 — Metode Kulit Tabung</span><strong>+</strong>
+          </button>
+          <div class="accordion-content">
+            <p>Metode kulit tabung memakai rumus jari-jari kali tinggi. Biasanya cocok jika irisan sejajar dengan sumbu putar.</p>
+            <div class="formula-card">\[V=2\pi\int_a^b r h\,dx\]</div>
+            <h4>Contoh dari kisi-kisi</h4>
+            <p>\(y=x^2, y=0, x=3\), diputar terhadap sumbu-Y.</p>
+            <p>Karena diputar terhadap sumbu-Y, jari-jari \(r=x\). Tingginya \(h=x^2\).</p>
+            <div class="formula-card">\[V=2\pi\int_0^3x(x^2)dx=\frac{81\pi}{2}\]</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section visual-section" id="visualisasi">
+      <div class="section-title wide">
+        <p class="eyebrow">Visualisasi hasil hitungan</p>
+        <h2>Lihat grafik, daerah arsiran, batas, dan rumusnya</h2>
+        <p>Pilih contoh soal. Website akan menampilkan sketsa 2D, angka \(x\) untuk tabel, dan hasil akhirnya.</p>
+      </div>
+
+      <div class="visualizer">
+        <aside class="visual-controls">
+          <label for="exampleSelect">Pilih contoh soal</label>
+          <select id="exampleSelect"></select>
+          <div class="control-note">
+            <strong>Tips:</strong> Angka \(x\) untuk sketsa biasanya diambil dari batas kiri, batas kanan, dan angka mudah di antaranya.
+          </div>
+          <div id="exampleMeta" class="example-meta"></div>
+        </aside>
+        <div class="canvas-wrap">
+          <canvas id="graphCanvas" width="900" height="560" aria-label="Visualisasi grafik"></canvas>
+          <div class="legend" id="legend"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="latihan">
+      <div class="section-title wide">
+        <p class="eyebrow">Latihan dari kisi-kisi</p>
+        <h2>Soal-soal yang cocok dimasukkan ke website</h2>
+        <p>Setiap soal bisa dijadikan kartu latihan dengan tombol “lihat pembahasan”.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Kategori latihan">
+        <button class="tab active" data-tab="luas" role="tab" aria-selected="true">Luas daerah</button>
+        <button class="tab" data-tab="cakram" role="tab" aria-selected="false">Cakram</button>
+        <button class="tab" data-tab="cincin" role="tab" aria-selected="false">Cincin</button>
+        <button class="tab" data-tab="kulit" role="tab" aria-selected="false">Kulit tabung</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-luas">
+        <div class="exercise-grid">
+          <details class="exercise-card"><summary>1. \(y=x+2\) dan \(y=x^2\)</summary><p>Titik potong \(x=-1,2\). Luas \(=\frac92\).</p></details>
+          <details class="exercise-card"><summary>2. \(y=x^2-2\) dan \(y=2x^2+x-4\)</summary><p>Titik potong \(x=-2,1\). Luas \(=\frac92\).</p></details>
+          <details class="exercise-card"><summary>3. \(y=x\) dan \(y=x^2\)</summary><p>Titik potong \(x=0,1\). Luas \(=\frac16\).</p></details>
+          <details class="exercise-card"><summary>4. \(y=\sqrt{x}\) dan \(y=-x+6\)</summary><p>Catatan: dua kurva ini hanya berpotongan sekali. Agar daerah tertutup, biasanya dipakai batas tambahan \(x=0\). Dengan \(0\le x\le4\), luas \(=\frac{32}{3}\).</p></details>
+          <details class="exercise-card"><summary>5. \(y=x+6\), \(y=x^2\), dan \(x=1\)</summary><p>Kurva berpotongan di \(x=-2\) dan \(x=3\). Dengan garis \(x=1\), bisa terbentuk dua daerah. Cek arsiran dosen.</p></details>
+          <details class="exercise-card"><summary>6. \(y^2=4-x\) dan \(y^2=4-4x\)</summary><p>Pakai \(dy\). Batas \(y=-2\) sampai \(y=2\). Luas \(=8\).</p></details>
+          <details class="exercise-card"><summary>7. \(y=(x-3)(x-1)\) dan \(y=x\)</summary><p>Titik potong \(x=\frac{5\pm\sqrt{13}}2\). Luas \(=\frac{13\sqrt{13}}6\).</p></details>
+          <details class="exercise-card"><summary>8. \(y=x^2-9\) dan \(y=(2x-1)(x+3)\)</summary><p>Titik potong \(x=-3,-2\). Luas \(=\frac16\).</p></details>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-cakram">
+        <div class="exercise-grid">
+          <details class="exercise-card"><summary>a. \(y=-x+1, x=0, x=1\)</summary><p>\(V=\pi\int_0^1(-x+1)^2dx=\frac\pi3\).</p></details>
+          <details class="exercise-card"><summary>b. \(y=4-x^2, x=0, x=2\)</summary><p>\(V=\pi\int_0^2(4-x^2)^2dx=\frac{256\pi}{15}\).</p></details>
+          <details class="exercise-card"><summary>c. \(y=1-x^2\) dan sumbu-X</summary><p>Batas \(-1\le x\le1\). \(V=\frac{16\pi}{15}\).</p></details>
+          <details class="exercise-card"><summary>d. \(y=\sqrt{x}, x=1, x=2\)</summary><p>\(V=\pi\int_1^2(\sqrt{x})^2dx=\frac{3\pi}{2}\).</p></details>
+          <details class="exercise-card"><summary>e. \(y=\sqrt{9-x^2}\)</summary><p>Batas \(-3\le x\le3\). \(V=36\pi\).</p></details>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-cincin">
+        <div class="exercise-grid">
+          <details class="exercise-card"><summary>1. \(y=x^2\) dan \(y=2x\), terhadap sumbu-X</summary><p>\(V=\frac{64\pi}{15}\).</p></details>
+          <details class="exercise-card"><summary>2. \(y=x^2\) dan \(y=2x\), terhadap sumbu-Y</summary><p>Pakai \(dy\): \(R=\sqrt y\), \(r=y/2\). Volume \(=\frac{8\pi}{3}\).</p></details>
+          <details class="exercise-card"><summary>3. \(x=(y-2)^2\) dan \(x+y=4\), terhadap sumbu-Y</summary><p>Batas \(y=0\) sampai \(y=3\). Volume \(=\frac{72\pi}{5}\).</p></details>
+          <details class="exercise-card"><summary>4. \(y=x^2\) dan \(y=-x^2+4\), terhadap sumbu-X</summary><p>Batas \(-\sqrt2\le x\le\sqrt2\). Volume \(=\frac{64\sqrt2\pi}{3}\).</p></details>
+          <details class="exercise-card"><summary>5. \(y=x^2\) dan \(y=x^5\)</summary><p>Sumbu putar perlu ditentukan. Jika terhadap sumbu-X, volume \(=\frac{6\pi}{55}\).</p></details>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-kulit">
+        <div class="exercise-grid">
+          <details class="exercise-card"><summary>a. \(y=x^2, y=0, x=3\), terhadap sumbu-Y</summary><p>\(r=x\), \(h=x^2\), \(V=\frac{81\pi}{2}\).</p></details>
+          <details class="exercise-card"><summary>b. \(y=\frac14x^2, y=0, x=6\), terhadap sumbu-Y</summary><p>\(r=x\), \(h=\frac14x^2\), \(V=162\pi\).</p></details>
+          <details class="exercise-card"><summary>c. \(y=4-x^2, x=0, y=4\)</summary><p>Catatan: batas ini belum membentuk daerah tertutup yang jelas. Jika maksudnya \(y=0\), maka \(V=8\pi\).</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cheat" id="tips">
+      <div class="section-title wide">
+        <p class="eyebrow">Rumus cepat dan tips UAS</p>
+        <h2>Kalau bingung, kembali ke checklist ini</h2>
+      </div>
+      <div class="cheat-grid">
+        <article class="cheat-card">
+          <h3>Luas daerah</h3>
+          <p>\[L=\int(atas-bawah)dx\]</p>
+          <p>atau \(L=\int(kanan-kiri)dy\).</p>
+        </article>
+        <article class="cheat-card">
+          <h3>Cakram</h3>
+          <p>\[V=\pi\int R^2dx\]</p>
+          <p>Dipakai jika hasil putar tidak berlubang.</p>
+        </article>
+        <article class="cheat-card">
+          <h3>Cincin</h3>
+          <p>\[V=\pi\int(R^2-r^2)dx\]</p>
+          <p>Dipakai jika hasil putar berlubang.</p>
+        </article>
+        <article class="cheat-card">
+          <h3>Kulit tabung</h3>
+          <p>\[V=2\pi\int rh\,dx\]</p>
+          <p>\(r\) adalah jarak ke sumbu putar, \(h\) adalah tinggi daerah.</p>
+        </article>
+      </div>
+      <div class="final-panel">
+        <h3>Kalimat penyemangat sebelum UAS</h3>
+        <p>Kalkulus terlihat menakutkan karena banyak simbol. Tapi pola soalnya berulang: cari titik potong, tentukan batas, gambar daerah, pilih rumus, lalu hitung. Kalau langkah awalnya benar, sisanya jauh lebih tenang.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Dibuat sebagai website belajar Kalkulus 2 UAS — versi ramah mahasiswa.</p>
+    <a href="#top">Kembali ke atas ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
